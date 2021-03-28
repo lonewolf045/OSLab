@@ -1,0 +1,21 @@
+This is my personal manual entry for my sharedll.h library.
+
+The library has following functions...
+int shlget(key_t key);
+void addNodeToList(int data, key_t key);
+void printLL(key_t key);
+
+to run the whole program, compile the sharedll.c file using
+gcc -c -Wall -Werror -fpic sharedll.c
+this will create a .o file.
+then run these three commands
+gcc -o add addNode.c sharedll.o -g
+gcc -o print printList.c sharedll.o -g
+gcc -o init listinit.c sharedll.o -g
+
+Then you can initialize a list in the following manner,
+./init list_number1 list_number2 ......
+You can add a node to a list by
+./init list_number1 corresponding_value list_number2 corresponding_value........
+You can print the list by
+./print list_number1 list_number2 ......
